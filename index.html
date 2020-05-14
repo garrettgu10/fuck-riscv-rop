@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FuckRISCVROP</title>
+    </head>
+    <body>
+        <h1>FuckRISCVROP</h1>
+        <h3>Compile arbitrary brainfuck code into RISCV64 ROP chains!</h2>
+        <form onsubmit="return generateCode()">
+            <label for="source">Enter your brainfuck code here: </label><br>
+            <textarea id="source" rows="15" cols="40"></textarea><br>
+            <input type="submit" label="Generate!">
+        </form>
+        <br>
+        <div style="display:flex">
+            <div>
+                <label for="jmpbuf">jmpbuf(0x20000000-0x30000000):</label><br>
+                <textarea id="jmpbuf" rows="15" cols="40" readonly></textarea>
+            </div>
+            <div>
+                <label for="stackbuf">stackbuf(0x10000000-0x20000000):</label><br>
+                <textarea id="stackbuf" rows="15" cols="40" readonly></textarea>
+            </div>
+        </div>
+        <div>In addition to 0x10000000 - 0x30000000, some scratch space needs to be allocated for the brainfuck tape at 0x30000000-0x40000000.</div>
+        <div>Starter program code: <a href="main.c">main.c</a> <a href="start_rop.S">start_rop.S</a></div>
+        <script src="jmpbuf.js"></script>
+        <script src="gadgets.js"></script>
+    </body>
+</html>
