@@ -9,7 +9,7 @@
         <form onsubmit="return generateCode()">
             <label for="source">Enter your brainfuck code here: </label><br>
             <textarea id="source" rows="15" cols="40"></textarea><br>
-            <input type="submit" label="Generate!">
+            <input type="submit" value="Let's go!">
         </form>
         <br>
         <div style="display:flex">
@@ -24,6 +24,7 @@
         </div>
         <div>In addition to 0x10000000 - 0x30000000, some scratch space needs to be allocated for the brainfuck tape at 0x30000000-0x40000000.</div>
         <div>Starter program code: <a href="main.c">main.c</a> <a href="start_rop.S">start_rop.S</a></div>
+        <div>Gadgets found are for glibc-2.30.9000-29.fc32.riscv64.</div>
         <script src="jmpbuf.js"></script>
         <script src="gadgets.js"></script>
     </body>
